@@ -22,7 +22,7 @@ apaxVersion: 4.1.0
 
 #Catalogs
 catalogs:
-  "@ax/simatic-ax": 2510.0.0
+  "@ax/simatic-ax": 2510.12.0
 
 publicKeys:
   "@simatic-ax":
