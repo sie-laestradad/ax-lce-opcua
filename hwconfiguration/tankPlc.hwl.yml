@@ -12,6 +12,7 @@ Devices:
               SecurityPolicies:
                 - Basic256Sha256SignEncrypt
                       # Port: 4840
+              AutoAcceptAllClientCertificates: True
               AlarmsAndConditionsAcknowledgeActive: True
               AlarmsAndConditionsEnable: True
               # AlarmsAndConditionsActiveMultilingual: False
