@@ -1,8 +1,9 @@
 # Create the server_cert_ext.cnf file
 cat <<EOF > server_cert_ext.cnf
 basicConstraints = CA:FALSE
-keyUsage=critical, digitalSignature, nonRepudiation, keyCertSign, keyEncipherment, dataEncipherment
-extendedKeyUsage=serverAuth ,clientAuth
+keyUsage = critical, digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth, clientAuth
+subjectAltName = IP:192.168.0.1, URI:urn:192.168.0.1:Siemens:SIMATICAX:OpcUaServer
 EOF
 
 # Generate private key
@@ -33,8 +34,8 @@ echo "Certificate with public key creation COMPLETED"
 # move certificate files to folder
 mv reference_x509.crt certificate
 mv containerWithPublicAndPrivateKeys_x509.p12 certificate
-# delete certificat generation temporary files 
-rm privateKey.pem 
-rm server.cert.pem 
-rm server.csr 
+# delete certificat generation temporary files
+rm privateKey.pem
+rm server.cert.pem
+rm server.csr
 rm server_cert_ext.cnf
