@@ -13,5 +13,13 @@ CONFIGURATION MyConfiguration
         {S7.Extern=ReadWrite}
         {resource=alarming?refid:dd62150c}
         highLevelAlarm : Siemens.Simatic.Alarming.ProgramAlarm;
+        
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        toPLC: WORD;
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        fromPLC: _DP_FRWA1_1_0_000CC1_KE01_LUC_typeButtons1;
+        
     END_VAR
 END_CONFIGURATION

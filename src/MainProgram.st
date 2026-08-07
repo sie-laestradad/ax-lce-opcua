@@ -22,6 +22,16 @@ CLASS OutputValve EXTENDS Valve
     END_VAR
 END_CLASS
 
+
+TYPE
+    {S7.extern=ReadWrite}
+    _DP_FRWA1_1_0_000CC1_KE01_LUC_typeButtons1: STRUCT
+        visibility: WORD;
+        operatorControlAllowed: WORD;
+        active:WORD;
+    END_STRUCT;
+END_TYPE
+
 TYPE
     {S7.extern=ReadOnly}
     Tank: STRUCT
