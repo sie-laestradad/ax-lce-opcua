@@ -22,7 +22,7 @@ apaxVersion: 4.1.0
 
 #Catalogs
 catalogs:
-  "@ax/simatic-ax": 2510.12.0
+  "@ax/simatic-ax": 2510.17.0
 
 publicKeys:
   "@simatic-ax":
@@ -30,11 +30,11 @@ publicKeys:
     "v2": "7af3e394eb2b285a3d99ab8e1f745cc6db75704b30a80393339c721a92ffffd9"
 # Dependencies
 dependencies:
-  "@ax/simatic-clocks": ^11.0.14
-  "@ax/simatic-alarming": ^5.0.1
+  "@ax/simatic-clocks": ^11.0.116
+  "@ax/simatic-alarming": ^5.2.0
 devDependencies:
-  "@ax/sdk": ^2510.0.0
-  "@ax/mon": ^1.9.4
+  "@ax/sdk": ^2510.17.0
+  "@ax/mon": ^1.15.85
 # Project variables
 variables:
   APAX_BUILD_ARGS:
@@ -98,4 +98,3 @@ scripts:
 
   monitor:
     - apax mon --targetIP $IP_ADDRESS --certificate $TLS_CONNECT_CERTFILE --username $USERNAME --password $PASSWORD --file ./watchlist/myWatchTable.mon --continuously
-
