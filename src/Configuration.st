@@ -16,10 +16,16 @@ CONFIGURATION MyConfiguration
         
         {OpcUa.accesslevel=ReadWrite}
         {S7.extern=ReadWrite}
-        toPLC: WORD;
+        toPLC: DWORD;
         {OpcUa.accesslevel=ReadWrite}
         {S7.extern=ReadWrite}
-        fromPLC: _DP_FRWA1_1_0_000CC1_KE01_LUC_typeButtons1;
+        fromPLC: LAF_typeButtons1;
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        Config: DWORD;
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        History: ARRAY[0..8] OF LAF_typeHistoryRecord1;
         
     END_VAR
 END_CONFIGURATION

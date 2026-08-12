@@ -25,10 +25,19 @@ END_CLASS
 
 TYPE
     {S7.extern=ReadWrite}
-    _DP_FRWA1_1_0_000CC1_KE01_LUC_typeButtons1: STRUCT
-        visibility: WORD;
-        operatorControlAllowed: WORD;
-        active:WORD;
+    LAF_typeButtons1: STRUCT
+        operatorControlAllowed: DWORD;
+        active: DWORD;
+    END_STRUCT;
+END_TYPE
+
+TYPE
+    {S7.extern=ReadWrite}
+    LAF_typeHistoryRecord1: STRUCT
+        mode: DINT;
+        state: DINT;
+        duration: LREAL;
+        started: DATE_AND_TIME;
     END_STRUCT;
 END_TYPE
 
