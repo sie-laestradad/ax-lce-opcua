@@ -1,6 +1,2 @@
-tank.rVolume_Current
-tank.cVolume_Percent
-tank.inputValve.cOpenPercent
-tank.outputValve.cOpenPercent
 fromPLC
 toPLC

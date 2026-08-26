@@ -85,16 +85,6 @@ scripts:
     - apax hwcompile
     - apax hwdownload
 
-  fill:
-    - apax mod --targetIP $IP_ADDRESS  --certificate $TLS_CONNECT_CERTFILE --username $USERNAME --password $PASSWORD --symbol "tank.inputValve.cOpenPercent" --value 10
-  stopFill:
-    - apax mod --targetIP $IP_ADDRESS  --certificate $TLS_CONNECT_CERTFILE --username $USERNAME --password $PASSWORD --symbol "tank.inputValve.cOpenPercent" --value 0
-  empty:
-    - apax mod --targetIP $IP_ADDRESS  --certificate $TLS_CONNECT_CERTFILE --username $USERNAME --password $PASSWORD --symbol "tank.outputValve.cOpenPercent" --value 20
-  stopEmpty:
-    - apax mod --targetIP $IP_ADDRESS  --certificate $TLS_CONNECT_CERTFILE --username $USERNAME --password $PASSWORD --symbol "tank.outputValve.cOpenPercent" --value 0
-
   # Monitor from server side
-
   monitor:
     - apax mon --targetIP $IP_ADDRESS --certificate $TLS_CONNECT_CERTFILE --username $USERNAME --password $PASSWORD --file ./watchlist/myWatchTable.mon --continuously

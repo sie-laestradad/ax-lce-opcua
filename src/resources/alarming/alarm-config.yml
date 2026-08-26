@@ -1,9 +1,0 @@
-alarms:
-  - refId: dd62150c
-    text: Tank level exceeds 85%!
-    type: noAck
-    priority: 1
-    group: 1
-    displayClass: 1
-    report: false
-    addTexts: []

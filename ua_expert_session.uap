@@ -60,7 +60,7 @@
 0\Namespaces\3=http://www.siemens.com/simatic-s7-opcua
 0\Namespaces\4=http://Server Interface_1
 1\Name=SIMATIC.S7-1500.OPC-UA.Application:TankPlc@192.168.0.1
-1\Connected=true
+1\Connected=false
 1\ProjectServerId=1
 1\ServerUrl=opc.tcp://192.168.0.1:4840
 1\Server.ApplicationUri=urn:192.168.0.1:Siemens:SIMATICAX:OpcUaServer
@@ -122,7 +122,7 @@
 
 [Documents]
 Data%20Access%20View\DocumentType=Data Access View
-Data%20Access%20View\DocumentSettings\headerState=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x5\xea\0\0\0\t\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x84\0\0\0\0\0\0\0\t\0\0\0'\0\0\0\x1\0\0\0\0\0\0\x1\x33\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\xf1\0\0\0\x1\0\0\0\0\0\0\x1\xab\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\0\0\0\0)
+Data%20Access%20View\DocumentSettings\headerState=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x5\x95\0\0\0\t\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x84\0\0\0\0\0\0\0\t\0\0\0'\0\0\0\x1\0\0\0\0\0\0\x1\x33\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x9c\0\0\0\x1\0\0\0\0\0\0\x1\xab\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\0\0\0\0)
 Data%20Access%20View\DocumentSettings\SubscriptionSettings\publishingInterval=1000
 Data%20Access%20View\DocumentSettings\SubscriptionSettings\lifetimeCount=300
 Data%20Access%20View\DocumentSettings\SubscriptionSettings\maxKeepAliveCount=10
@@ -462,14 +462,14 @@ Data%20Access%20View\DocumentSettings\Items\000\024\MonitoringParameters\QueueSi
 Data%20Access%20View\DocumentSettings\Items\000\024\MonitoringParameters\SamplingInterval=1000
 Data%20Access%20View\DocumentSettings\Items\001\031\DisplayName=toPLC
 Data%20Access%20View\DocumentSettings\Items\001\031\NodeId="ns=4;i=29"
-Data%20Access%20View\DocumentSettings\Items\001\031\Status=2
+Data%20Access%20View\DocumentSettings\Items\001\031\Status=0
 Data%20Access%20View\DocumentSettings\Items\001\031\MonitoringMode=2
 Data%20Access%20View\DocumentSettings\Items\001\031\MonitoringParameters\DiscardOldest=1
 Data%20Access%20View\DocumentSettings\Items\001\031\MonitoringParameters\QueueSize=1
 Data%20Access%20View\DocumentSettings\Items\001\031\MonitoringParameters\SamplingInterval=1000
 Data%20Access%20View\DocumentSettings\Items\001\032\DisplayName=fromPLC
 Data%20Access%20View\DocumentSettings\Items\001\032\NodeId="ns=4;i=32"
-Data%20Access%20View\DocumentSettings\Items\001\032\Status=2
+Data%20Access%20View\DocumentSettings\Items\001\032\Status=0
 Data%20Access%20View\DocumentSettings\Items\001\032\MonitoringMode=2
 Data%20Access%20View\DocumentSettings\Items\001\032\MonitoringParameters\DiscardOldest=1
 Data%20Access%20View\DocumentSettings\Items\001\032\MonitoringParameters\QueueSize=1
@@ -483,11 +483,18 @@ Data%20Access%20View\DocumentSettings\Items\000\023\MonitoringParameters\QueueSi
 Data%20Access%20View\DocumentSettings\Items\000\023\MonitoringParameters\SamplingInterval=1000
 Data%20Access%20View\DocumentSettings\Items\001\033\DisplayName=Config
 Data%20Access%20View\DocumentSettings\Items\001\033\NodeId="ns=4;i=35"
-Data%20Access%20View\DocumentSettings\Items\001\033\Status=2
+Data%20Access%20View\DocumentSettings\Items\001\033\Status=0
 Data%20Access%20View\DocumentSettings\Items\001\033\MonitoringMode=2
 Data%20Access%20View\DocumentSettings\Items\001\033\MonitoringParameters\DiscardOldest=1
 Data%20Access%20View\DocumentSettings\Items\001\033\MonitoringParameters\QueueSize=1
 Data%20Access%20View\DocumentSettings\Items\001\033\MonitoringParameters\SamplingInterval=1000
+Data%20Access%20View\DocumentSettings\Items\001\035\DisplayName=History
+Data%20Access%20View\DocumentSettings\Items\001\035\NodeId="ns=4;i=38"
+Data%20Access%20View\DocumentSettings\Items\001\035\Status=0
+Data%20Access%20View\DocumentSettings\Items\001\035\MonitoringMode=2
+Data%20Access%20View\DocumentSettings\Items\001\035\MonitoringParameters\DiscardOldest=1
+Data%20Access%20View\DocumentSettings\Items\001\035\MonitoringParameters\QueueSize=1
+Data%20Access%20View\DocumentSettings\Items\001\035\MonitoringParameters\SamplingInterval=1000
 
 [Attribute%20Plugin]
 Act_OnOff_Checked=true
