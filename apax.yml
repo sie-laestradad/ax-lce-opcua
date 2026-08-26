@@ -32,6 +32,7 @@ publicKeys:
 dependencies:
   "@ax/simatic-clocks": ^11.0.116
   "@ax/simatic-alarming": ^5.2.0
+  lbc-lib: file:lbc-lib-0.1.0.apax.tgz
 devDependencies:
   "@ax/sdk": ^2510.17.0
   "@ax/mon": ^1.15.85
