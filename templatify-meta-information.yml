@@ -5,7 +5,6 @@
 files:
   - .vscode
   - certificate
-  - docs
   - hwconfiguration
   - src
   - test
@@ -13,5 +12,3 @@ files:
   - .gitignore
   - apax-lock.json
   - apax.yml
-  - LICENSE.md
-  - README.md
