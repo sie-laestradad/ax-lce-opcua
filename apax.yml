@@ -44,8 +44,9 @@ variables:
   # IP address of the target device, you want to download your application code to
   # Note: For value debugging/monitoring, the IP address in the .vscode/launch.json must also be adapted
   IP_ADDRESS: "192.168.0.1"
-  PLC_NAME: "TankPlc"
-  HWL_FILE: "hwconfiguration/tankPlc.hwl.yml"
+  PLC_NAME: "MyPLC"
+  HWL_FILE: "hwc/myPLC.hwl.yml"
+  HWL_FOLDER: "hwc"
 
   CERT_PASSWORD: "!S71500"
   MASTER_PASSWORD: "VeryGoodPassword123++"
@@ -60,8 +61,8 @@ variables:
 scripts:
   # call 'apax load' to download the built program to the specified target
   # The variables IP_ADDRESS and BIN_FOLDER above might have to be adapted
-  load: apax sld load --target $IP_ADDRESS --restart --accept-security-disclaimer --log debug --certificate $TLS_CONNECT_CERTFILE
-  hwcompile: apax hwc compile --input $HWL_FILE  --output "bin/hwcn"
+  load: apax sld load --target $IP_ADDRESS --restart --accept-security-disclaimer --log debug --certificate $TLS_CONNECT_CERTFILE --username $USERNAME --password $PASSWORD
+  hwcompile: apax hwc compile --input $HWL_FOLDER --output "bin/hwcn"
   hwdownload: apax hwld load --input "./bin/hwcn/$PLC_NAME" --target $IP_ADDRESS --master-password $MASTER_PASSWORD --accept-security-disclaimer
 
   create_certificate:
@@ -70,11 +71,11 @@ scripts:
     - echo "Make sure that the CERT_PASSPHRASE variable retains the value that was last used to generate the certificate files when you import certificates later."
 
   setup-hw-certificates:
-    - apax hwc setup-secure-communication --module-name $PLC_NAME --input $HWL_FILE --master-password $MASTER_PASSWORD
-    - apax hwc import-certificate --module-name $PLC_NAME --input $HWL_FILE --certificate $TLS_IMPORT_CERTFILE --passphrase $CERT_PASSWORD --purpose "TLS"
-    - apax hwc import-certificate --module-name $PLC_NAME --input $HWL_FILE --certificate $TLS_IMPORT_CERTFILE --passphrase $CERT_PASSWORD --purpose "OpcUaServer"
+    - apax hwc setup-secure-communication --module-name $PLC_NAME --input $HWL_FOLDER --master-password $MASTER_PASSWORD
+    - apax hwc import-certificate --module-name $PLC_NAME --input $HWL_FOLDER --certificate $TLS_IMPORT_CERTFILE --passphrase $CERT_PASSWORD --purpose "TLS"
+    - apax hwc import-certificate --module-name $PLC_NAME --input $HWL_FOLDER --certificate $TLS_IMPORT_CERTFILE --passphrase $CERT_PASSWORD --purpose "OpcUaServer"
 
-  set-password: apax hwc manage-users --module-name $PLC_NAME --input $HWL_FILE  set-password --username $USERNAME --password  $PASSWORD
+  set-password: apax hwc manage-users --module-name $PLC_NAME --input $HWL_FOLDER  set-password --username $USERNAME --password  $PASSWORD
 
   # Compile and load software
   scl:

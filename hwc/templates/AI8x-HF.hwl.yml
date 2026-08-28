@@ -29,7 +29,7 @@ Templates:
             Channels:
             - Number: 0
               Parameters:
-                AdjustMeasuringRange: False
+                # AdjustMeasuringRange: removed — only valid when EnableScalingOfMeasurementValues: True
                 DiagnosticsNoSupplyVoltage: False
                 DiagnosticsOverflow: False
                 DiagnosticsUnderflow: False
@@ -43,9 +43,9 @@ Templates:
                 # Possible values: 1 - FastMode | 57 - StandardMode
                 OperatingMode: 'StandardMode'
                 # Possible values: 9 - PlusMinus5V | 11 - PlusMinus10V | 10 - Value1To5V | 8 - PlusMinus2dot5V
-                OperatingRange: 'PlusMinus10V'
+                # OperatingRange: removed — not applicable for Current2WireTransducer
                 # Possible values: 0 - Deactivated | 4 - Current2WireTransducer | 1 - Voltage | 3 - Current4WireTransducer
-                OperatingType: 'Voltage'
+                OperatingType: 'Current2WireTransducer'
                 # PhysicalQuantity (Integer)
                 # ScaledHighNominalRangeLimit (Number)
                 # ScaledLowNominalRangeLimit (Number)

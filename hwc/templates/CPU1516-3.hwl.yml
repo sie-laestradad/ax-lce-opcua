@@ -33,11 +33,11 @@ Templates:
         #   Length: 1
         #   Type: 'Output'
       - Type: 'OpcUaServer'
-        Enabled: False
+        Enabled: true
         Parameters:
           # TrustedClientCertificates:
           # - 'TrustedOpcUAClient.cer'
-          AutoAcceptAllClientCertificates: False
+          AutoAcceptAllClientCertificates: True
           MinimumPublishingInterval: 1000
           MinimumSamplingInterval: 1000
           # Possible value range: [1024, 49151]
@@ -51,11 +51,12 @@ Templates:
           # Possible values: 1 - NoSecurity | 2 - Basic128RsaSign | 4 - Basic128RsaSignEncrypt | 8 - Basic256Sign | 16 - Basic256SignEncrypt | 32 - Basic256Sha256Sign | 64 - Basic256Sha256SignEncrypt
           SecurityPolicies:
           - 'Basic256Sha256SignEncrypt'
+          - 'NoSecurity'
           # AlarmsAndConditionsAcknowledgeActive (Boolean)
           AlarmsAndConditionsEnable: False
           ServerGDSPushActive: False
           # AlarmsAndConditionsActiveMultilingual (Boolean)
-          ApplicationUri: 'urn:SIMATIC:PLC_1'
+          ApplicationUri: 'urn:192.168.0.1:Siemens:SIMATICAX:OpcUaServer'
           # Possible values: 0 - OpcUaCertificatesViaDownload | 1 - OpcUaCertificatesAtRuntime
           ServerCertificateSettings: 'OpcUaCertificatesViaDownload'
       - Type: 'Syslog'
@@ -211,7 +212,7 @@ Templates:
         # TimeSynchronizationUpdateInterval (Integer)
         CentralAlarmManagement: True
         # Possible values: 0 - NoLicense | 1 - SimaticOpcUaS71500Small | 2 - SimaticOpcUaS71500Medium | 3 - SimaticOpcUaS71500Large
-        OpcUaPurchasedLicense: 'NoLicense'
+        OpcUaPurchasedLicense: 'SimaticOpcUaS71500Medium'
         # Possible values: 0 - NoLicense | 1 - Value1X | 2 - Value2X | 3 - Value3X | 4 - Value4X | 5 - Value5X
         ProDiagUsedLicenses: 'NoLicense'
         IPv4ForwardingActive: False
@@ -231,27 +232,16 @@ Templates:
         Users:
         # UserManagement parameters listed below are intended as a sample. It is essential to adjust these settings according to your specific requirements before using them in your project.
         # To fully configure the user account, you must set a password for the user defined below. Please refer to the user documentation for instructions on setting passwords.
-          - Name: 'User1'
-            AssignedRoles:
-            - 'Role1'
+        - Name: MyUser
+          AssignedRoles:
+          - OpcUaServerRole
         Roles:
-        # UserManagement parameters listed below are intended as a sample. It is essential to adjust these settings according to your specific requirements before using them in your project.
-          - Name: 'Role1'
+        # UserManagement parameters listed below are intended as a sample. It is essential to adjust these settings according to your specific requirements before using them in your project. 
+          - Name: OpcUaServerRole
             FunctionRights:
-            - 'ReadPlcVariables'
-            - 'WritePlcVariables'
-            - 'ReadFiles'
-            - 'QueryDiagnostics'
-            - 'FlashLed'
-            - 'AccessProtectionFailsafeAccess'
-            - 'AccessProtectionFullAccess'
-            - 'AccessProtectionHMIAccess'
-            - 'AccessProtectionReadAccess'
-            - 'OpcUAServerAccess'
-            - 'OpcUAManageCertificates'
-            - 'ManageUserDefinedWebPages'
-            - 'OpenUserDefinedWebPages'
-            - 'WriteUserDefinedWebPages'
+            - OpcUAServerAccess
+            - OpcUAManageCertificates
+            - AccessProtectionFullAccess
       MultilingualSupport:
       - Locale: 'en-US'
         Active: True
