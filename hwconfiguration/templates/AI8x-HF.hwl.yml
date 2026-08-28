@@ -1,0 +1,229 @@
+Templates:
+  Modules:
+  - Name: 'AI8x-HF'
+    Placeholders:
+    - Name: 'NAME'
+    - Name: 'INPUTADDRESS'
+      Optional: True
+    Content:
+      Name: '${NAME}'
+      TypeIdentifier:
+        OrderNumber: '6ES7 531-7NF00-0AB0'
+        Version: 'V1.2'
+      Parameters:
+        AdditionalInformation: ""
+        EnableValueStatus: False
+        LocationIdentifier: ""
+        PlantDesignation: ""
+        # Possible values: 0 - FromCpu | 1 - StartupCpuOnlyIfCompatible | 2 - StartupCpuIfMismatch
+        StartupComparisonPresetToActualModule: 'FromCpu'
+        EnableScalingOfMeasurementValues: False
+      Submodules:
+      - Name: 'IOModule'
+        Slot: 1
+        IoConfiguration:
+          InputAddress: '${INPUTADDRESS}'
+          Inputs:
+            # Supported Process Image Partitions depend on the specific controller type in use (e.g., S7-1500 supports PIP 0–31).
+            # ProcessImagePartition: 'Automatic update'
+            Channels:
+            - Number: 0
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 1 - Value60 | 0 - Value50 | 2 - Value400 | 4 - Value10
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 1 - FastMode | 57 - StandardMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 9 - PlusMinus5V | 11 - PlusMinus10V | 10 - Value1To5V | 8 - PlusMinus2dot5V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 0 - Deactivated | 4 - Current2WireTransducer | 1 - Voltage | 3 - Current4WireTransducer
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 0 - None | 2 - Medium | 3 - Strong | 1 - Weak
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
+            - Number: 1
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 2 - Value400 | 0 - Value50 | 4 - Value10 | 1 - Value60
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 57 - StandardMode | 1 - FastMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 9 - PlusMinus5V | 11 - PlusMinus10V | 10 - Value1To5V | 8 - PlusMinus2dot5V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 4 - Current2WireTransducer | 0 - Deactivated | 1 - Voltage | 3 - Current4WireTransducer
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 2 - Medium | 0 - None | 3 - Strong | 1 - Weak
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
+            - Number: 2
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 2 - Value400 | 0 - Value50 | 4 - Value10 | 1 - Value60
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 57 - StandardMode | 1 - FastMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 9 - PlusMinus5V | 11 - PlusMinus10V | 10 - Value1To5V | 8 - PlusMinus2dot5V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 1 - Voltage | 3 - Current4WireTransducer | 0 - Deactivated | 4 - Current2WireTransducer
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 3 - Strong | 1 - Weak | 2 - Medium | 0 - None
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
+            - Number: 3
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 2 - Value400 | 0 - Value50 | 4 - Value10 | 1 - Value60
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 1 - FastMode | 57 - StandardMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 11 - PlusMinus10V | 8 - PlusMinus2dot5V | 10 - Value1To5V | 9 - PlusMinus5V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 1 - Voltage | 3 - Current4WireTransducer | 4 - Current2WireTransducer | 0 - Deactivated
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 3 - Strong | 1 - Weak | 0 - None | 2 - Medium
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
+            - Number: 4
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 4 - Value10 | 1 - Value60 | 2 - Value400 | 0 - Value50
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 1 - FastMode | 57 - StandardMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 11 - PlusMinus10V | 8 - PlusMinus2dot5V | 10 - Value1To5V | 9 - PlusMinus5V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 3 - Current4WireTransducer | 4 - Current2WireTransducer | 0 - Deactivated | 1 - Voltage
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 3 - Strong | 1 - Weak | 2 - Medium | 0 - None
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
+            - Number: 5
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 4 - Value10 | 1 - Value60 | 0 - Value50 | 2 - Value400
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 1 - FastMode | 57 - StandardMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 8 - PlusMinus2dot5V | 10 - Value1To5V | 9 - PlusMinus5V | 11 - PlusMinus10V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 3 - Current4WireTransducer | 4 - Current2WireTransducer | 0 - Deactivated | 1 - Voltage
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 1 - Weak | 0 - None | 2 - Medium | 3 - Strong
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
+            - Number: 6
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 4 - Value10 | 1 - Value60 | 2 - Value400 | 0 - Value50
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 1 - FastMode | 57 - StandardMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 8 - PlusMinus2dot5V | 10 - Value1To5V | 9 - PlusMinus5V | 11 - PlusMinus10V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 3 - Current4WireTransducer | 4 - Current2WireTransducer | 0 - Deactivated | 1 - Voltage
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 1 - Weak | 0 - None | 2 - Medium | 3 - Strong
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
+            - Number: 7
+              Parameters:
+                AdjustMeasuringRange: False
+                DiagnosticsNoSupplyVoltage: False
+                DiagnosticsOverflow: False
+                DiagnosticsUnderflow: False
+                # DiagnosticsWireBreak (Boolean)
+                # DiagnosticsWireBreakLimit (Integer)
+                # HighLimit: 0
+                # Possible values: 1 - Value60 | 2 - Value400 | 0 - Value50 | 4 - Value10
+                InterferenceFrequencySuppression: 'Value50'
+                # InverseScaling (Boolean)
+                # LowLimit: 0
+                # Possible values: 1 - FastMode | 57 - StandardMode
+                OperatingMode: 'StandardMode'
+                # Possible values: 10 - Value1To5V | 9 - PlusMinus5V | 11 - PlusMinus10V | 8 - PlusMinus2dot5V
+                OperatingRange: 'PlusMinus10V'
+                # Possible values: 0 - Deactivated | 4 - Current2WireTransducer | 1 - Voltage | 3 - Current4WireTransducer
+                OperatingType: 'Voltage'
+                # PhysicalQuantity (Integer)
+                # ScaledHighNominalRangeLimit (Number)
+                # ScaledLowNominalRangeLimit (Number)
+                # Possible values: 0 - None | 2 - Medium | 3 - Strong | 1 - Weak
+                Smoothing: 'None'
+                # UnitsOfMeasure (Integer)
