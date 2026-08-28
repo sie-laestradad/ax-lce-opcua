@@ -1,1 +1,6 @@
-InstAnalogInput
+simInput
+myInput
+InstAnalogInput.commands
+InstAnalogInput.config
+InstAnalogInput.monitoring
+AI1
