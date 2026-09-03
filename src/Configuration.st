@@ -6,21 +6,31 @@ CONFIGURATION MyConfiguration
     PROGRAM P1 WITH Main: LBCexample;
 
     VAR_GLOBAL
+
         
-        {OpcUa.accesslevel=Read}
-        {S7.extern=Read}
-        myInput AT %IW10 : INT;
-
-        simInput : INT;
-        simMode : BOOL := TRUE;
-        qualityBit : BOOL := TRUE;
-        resetBit : BOOL;
-
         {OpcUa.accesslevel=ReadWrite}
         {S7.extern=ReadWrite}
-        InstAnalogInput: LBC_typeAnalogInputInterface;
-
-        AI1 : LBC_AnalogInput;
+        InstAnalogInput     : LBC_typeAnalogInputInterface;
         
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        InstAchn            : LBC_typeAnalogScaleInterface;
+                
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        InstDsig            : LBC_typeDigitalSignalInterface;
+        
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        InstTwoWay          : LBC_typeTwoWayActuatorInterface;
+        
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        InstThreeWay        : LBC_typeThreeWayActuatorInterface;
+        
+        {OpcUa.accesslevel=ReadWrite}
+        {S7.extern=ReadWrite}
+        InstMotorStarter    : LBC_typeMotorStarterInterface;
+
     END_VAR
 END_CONFIGURATION
